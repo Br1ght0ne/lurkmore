@@ -1,0 +1,4 @@
+.rspec
+Gemfile*
+build/
+.idea/

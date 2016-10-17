@@ -16,8 +16,12 @@ class Lurkmore
   def self.random
     spinner = TTY::Spinner.new
     spinner.run do
-      @session = Capybara::Session.new(:poltergeist)
-      @session.visit(LINK_RANDOM)
+      begin
+        @session = Capybara::Session.new(:poltergeist)
+        @session.visit(LINK_RANDOM)
+      rescue Capybara::Poltergeist::JavascriptError
+        $stderr.puts "A JS error occured. Skipping..."
+      end
     end
     begin
       if $stdout.tty?

@@ -5,9 +5,7 @@ source 'https://rubygems.org' do
   group :test do
     gem 'rake'
     gem 'rspec'
-  end
-
-  group :development do
-    gem 'coveralls', require: false
+    gem 'simplecov', require: false
+    gem 'yard'
   end
 end

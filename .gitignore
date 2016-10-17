@@ -1,5 +1,5 @@
 .rspec
-Gemfile*
+Gemfile.lock
 build/
 .idea/
 coverage
